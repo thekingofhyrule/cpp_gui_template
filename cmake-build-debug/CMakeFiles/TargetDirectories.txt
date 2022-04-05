@@ -1,0 +1,7 @@
+C:/Users/james/Documents/GitHub/cpp_gui_template/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/james/Documents/GitHub/cpp_gui_template/cmake-build-debug/CMakeFiles/CPP_GUI_TEMPLATE.dir
+C:/Users/james/Documents/GitHub/cpp_gui_template/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/james/Documents/GitHub/cpp_gui_template/cmake-build-debug/external/IMGUI/CMakeFiles/edit_cache.dir
+C:/Users/james/Documents/GitHub/cpp_gui_template/cmake-build-debug/external/IMGUI/CMakeFiles/rebuild_cache.dir
+C:/Users/james/Documents/GitHub/cpp_gui_template/cmake-build-debug/external/SDL/CMakeFiles/edit_cache.dir
+C:/Users/james/Documents/GitHub/cpp_gui_template/cmake-build-debug/external/SDL/CMakeFiles/rebuild_cache.dir
