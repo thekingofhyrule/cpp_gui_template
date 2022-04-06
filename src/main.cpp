@@ -1,14 +1,17 @@
 //
+// Created by neljn on 3/20/22.
 //
-//
-#include <iostream>
-#include "imgui.h"
-#include "imgui_impl_sdl.h"
-#include "imgui_impl_opengl3.h"
-#include <stdio.h>
-#include <SDL.h>
+#include "Game.h"
 
-int main(){
-    std::cout << "Hello Gui Template" << std::endl;
-    return 0;
+int main(int argc, char *argv[]) {
+
+    SDL_SetMainReady();
+
+    Game game;
+
+  game.Initialize();
+  game.Run();
+  game.Destroy();
+
+  return 0;
 }
