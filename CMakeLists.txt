@@ -33,19 +33,46 @@ endif()
 FetchContent_GetProperties(sdl2)
 FetchContent_MakeAvailable(sdl2)
 #----------Get SDL2_IMAGE----------------
+
+#----------Get Opengl
+find_package(OpenGL REQUIRED)
+#----------Get IMGUI---------------------
+FetchContent_Declare(
+        imgui
+        GIT_REPOSITORY https://github.com/ocornut/imgui.git
+        GIT_TAG v1.87
+        GIT_PROGRESS TRUE
+)
+FetchContent_GetProperties(imgui)
+if(NOT imgui_POPULATED)
+        FetchContent_Populate(imgui)
+        set(IMGUI_INCLUDE_DIR ${imgui_SOURCE_DIR}/)
+        file(GLOB IMGUI_SOURCES ${imgui_SOURCE_DIR}/*.cpp)
+        file(GLOB IMGUI_HEADERS ${imgui_SOURCE_DIR}/*.h)
+        add_library(imgui STATIC ${IMGUI_SOURCES} ${IMGUI_SOURCES} ${imgui_SOURCE_DIR}/backends/imgui_impl_opengl3.cpp ${imgui_SOURCE_DIR}/backends/imgui_impl_sdl.cpp)
+endif()
+FetchContent_MakeAvailable(imgui)
 #----------SUBDIRECTORIES----------------
 add_subdirectory(${sdl2_SOURCE_DIR} ${sdl2_BINARY_DIR} )
 #----------------------------------------
 
 add_executable(${PROJECT_NAME} src/main.cpp src/Game.cpp src/Game.h)
+target_include_directories(imgui PUBLIC ${sdl2_SOURCE_DIR}/include ${IMGUI_INCLUDE_DIR})
 target_include_directories(
         ${PROJECT_NAME}
         PRIVATE
         ${sdl2_SOURCE_DIR}/include
+        PUBLIC
+        ${IMGUI_INCLUDE_DIR}
+        ${OPENGL_INCLUDE_DIR}
 )
 target_link_libraries(
         ${PROJECT_NAME}
+        PUBLIC
+        ${OPENGL_LIBRARIES}
+        imgui
         PRIVATE
         -static
         SDL2-static
+
 )
