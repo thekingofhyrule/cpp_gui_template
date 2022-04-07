@@ -64,6 +64,7 @@ target_include_directories(
         ${sdl2_SOURCE_DIR}/include
         PUBLIC
         ${IMGUI_INCLUDE_DIR}
+        ${IMGUI_INCLUDE_DIR}/backends
         ${OPENGL_INCLUDE_DIR}
 )
 target_link_libraries(
