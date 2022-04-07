@@ -26,12 +26,17 @@ FetchContent_Declare(
         )
 if(NOT sdl2_POPULATED)
         FetchContent_Populate(sdl2)
+        set(SDL_SHARED 0FF)
+        set(SDL_STATIC ON)
+
 endif()
 FetchContent_GetProperties(sdl2)
 FetchContent_MakeAvailable(sdl2)
 #----------Get SDL2_IMAGE----------------
 #----------SUBDIRECTORIES----------------
+add_subdirectory(${sdl2_SOURCE_DIR} ${sdl2_BINARY_DIR} )
 #----------------------------------------
+
 add_executable(${PROJECT_NAME} src/main.cpp src/Game.cpp src/Game.h)
 target_include_directories(
         ${PROJECT_NAME}
