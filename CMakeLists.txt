@@ -56,7 +56,7 @@ FetchContent_MakeAvailable(imgui)
 add_subdirectory(${sdl2_SOURCE_DIR} ${sdl2_BINARY_DIR} )
 #----------------------------------------
 
-add_executable(${PROJECT_NAME} src/main.cpp src/Game.cpp src/Game.h)
+add_executable(${PROJECT_NAME} src/main.cpp)
 target_include_directories(imgui PUBLIC ${sdl2_SOURCE_DIR}/include ${IMGUI_INCLUDE_DIR})
 target_include_directories(
         ${PROJECT_NAME}

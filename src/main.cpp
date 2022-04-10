@@ -1,25 +1,17 @@
 //
-// Created by neljn on 3/20/22.
+// Created by TheKinfOfHyrule on 3/20/22.
 //
-#include "Game.h"
 #include "imgui.h"
 #include "imgui_impl_sdl.h"
 #include "imgui_impl_opengl3.h"
 #include <stdio.h>
+#define SDL_MAIN_HANDLED
 #include <SDL.h>
 #include <SDL_opengl.h>
 #include <iostream>
 int main(int argc, char *argv[]) {
 
-//    SDL_SetMainReady();
-//
-//    Game game;
-//
-//  game.Initialize();
-//  game.Run();
-//  game.Destroy();
-
-
+        SDL_SetMainReady();
         // Setup SDL
         // (Some versions of SDL before <2.0.10 appears to have performance/stalling issues on a minority of Windows systems,
         // depending on whether SDL_INIT_GAMECONTROLLER is enabled or disabled.. updating to latest version of SDL is recommended!)
