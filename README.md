@@ -1,4 +1,4 @@
-# Caution --- This project is very early on and is updated as I learn. --- Caution
+# Caution --- This project is very early on and is updated as I learn.
 ----
 # cpp_gui_template
 ----
